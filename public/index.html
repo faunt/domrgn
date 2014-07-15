@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <title>David Owen Morgan, IxD</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="../bower_components/platform/platform.js"></script>
+    
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    
+    <link rel="import" href="../components/font-tisa/font-tisa.html">
+    <link rel="import" href="../components/dom-scaffold/dom-scaffold.html">
+	<link rel="import" href="../bower_components/core-item/core-item.html">
+    <link rel="import" href="../bower_components/core-menu/core-submenu.html">
+    <style shim-shadowdom>
+
+      body {
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2", serif;
+        color: #666;
+        margin: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+      }
+      
+      dom-scaffold::shadow [main] core-toolbar {
+        background-color: #eee;
+        color: #fff;
+      }
+      
+      dom-scaffold::shadow [drawer] core-toolbar {
+        background-color: #f5f5f5;
+        color: #666;
+      }
+      
+      dom-scaffold::shadow #card.move-up {
+        transition: 0.38s -webkit-transform cubic-bezier(0.4, 0.0, 0.2, 1);
+        transition: 0.38s transform cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      
+      dom-scaffold::shadow #card {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      dom-scaffold::shadow #card:hover {
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      }
+      
+      dom-scaffold::shadow paper-fab.action-button {
+        position: absolute;
+        right: 14px;
+        bottom: -28px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        background-color: #12c700 !important;
+        transition: all 0.25s;
+      }
+      
+      dom-scaffold::shadow .action-button:hover:not(:active) {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+   //     background-color: #3d5afe !important;
+      }
+      
+      dom-scaffold::shadow core-item core-icon {
+      		fill: #ccc
+      }
+      
+      
+    </style>
+
+  </head>
+
+  <body unresolved>
+  
+    <dom-scaffold label="David Owen Morgan">
+    		
+    		<core-item label="Welcome" tag="welcome" url="../components/dom-welcome/demo.html" icon="home"></core-item>
+    		
+    		<core-submenu label="Case Studies" icon="expand-more">
+    				<core-item label	="App Social"></core-item>
+    				<core-item label	="Partners Film"></core-item>
+    		</core-submenu>	
+    			<core-item label="Portfolio" icon="work"></core-item>
+    		<core-submenu label="Process" icon="expand-more">
+    				<core-item label="Wisecracks" tag="wisecracks" url	="https://medium.com/@faunts/wisecracks-71a75ecf63cc?source=tw-6cc86f14fd3a-1405348206690"></core-item>
+    				<core-item label="Standing desk"></core-item>
+    				<core-item label	="Polymer"></core-item>
+    		</core-submenu>
+    		<core-item label="Blog" icon="label-outline"></core-item>
+    		
+ <!--    		
+      <core-item label="Checkbox" tag="paper-checkbox" url="../paper-checkbox/demo.html" src="code.png"></core-item>
+
+      <core-item label="Radio Button" tag="paper-radio-button" url="../paper-radio-group/demo.html" src="code.png"></core-item>
+
+      <core-item label="Toggle Button" tag="paper-toggle-button" url="../paper-toggle-button/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Input" tag="paper-input" url="../paper-input/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Ripple Effect" tag="paper-ripple" url="../paper-ripple/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Toolbar" tag="core-toolbar" url="demos/core-toolbar.html" src="code.png"></core-item>
+      
+      <core-item label="Progress Bar" tag="paper-progress" url="../paper-progress/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Slider" tag="paper-slider" url="../paper-slider/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Tabs" tag="paper-tabs" url="../paper-tabs/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Button" tag="paper-button" url="../paper-button/demo.html" src="code.png"></core-item>
+
+      <core-item label="Icon Button" tag="paper-icon-button" url="../paper-icon-button/demo.html" src="code.png"></core-item>
+
+      <core-item label="FAB" tag="paper-fab" url="../paper-fab/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Dialog" tag="paper-dialog" url="../paper-dialog/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Shadow" tag="paper-shadow" url="../paper-shadow/demo.html" src="code.png"></core-item>
+      
+      <core-item label="Toast" tag="paper-toast" url="../paper-toast/demo.html" src="code.png"></core-item>
+      
+      <!-- <core-submenu label="Toolbar & Scrolling" tag="core-header-panel" url="demos/core-header-panel/demo1.html" src="code.png">
+      
+        <core-item label="Demo1" tag="core-header-panel" url="demos/core-header-panel/demo1.html"></core-item>
+      
+        <core-item label="Demo2" tag="core-header-panel" url="demos/core-header-panel/demo2.html"></core-item>
+        
+        <core-item label="Demo3" tag="core-header-panel" url="demos/core-header-panel/demo3.html"></core-item>
+        
+        <core-item label="Demo4" tag="core-header-panel" url="demos/core-header-panel/demo4.html"></core-item>
+        
+      </core-submenu> -->
+      
+    </dom-scaffold>
+  
+  <script>
+ 	//analytics  
+ 	<script type="text/javascript" src="http://use.typekit.com/zkf1nif.js"></script>
+ 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+ 	
+  </script>  
+  </body>
+
+</html>

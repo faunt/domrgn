@@ -1,0 +1,49 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="dom-welcome">
+	<template>
+		<style>
+		
+		h1, h2, h3, h4, h5 {
+			font-weight: 300;
+			line-height: 1.25em;
+		}
+		.sc {
+			text-transform: lowercase;
+			font-variant: small-caps;
+			letter-spacing: 0.1em;
+		}
+		h3.sc {
+			color: #12c700;
+		}
+		h1 .sc, h1 b {
+			font-weight: 700;
+		}
+		sup {
+			vertical-align: baseline;
+			position: relative;
+			top: -0.4em;
+			color: #12c700;
+		}
+		::selection {
+			background: #12c700;
+			color: #fff;
+		}
+
+	// change dom-scaffold::shadow [main] core-toolbar AND drawer BG colours for each page here? JS to update onLoad? 
+			
+		</style>
+		
+		<h3 class="sc">In brief:</h3>
+		<h1>I’m lead <span class="sc">UX</span> designer on a handful of projects for Microsoft’s mobile phone services.<sup>1</sup> For 7 years I’ve honed products from concept to release and measured success against consumer behaviour. I’m expert in all major platforms and their guidelines, with software reaching Windows Phone, Windows 8, Android <span class="sc">OS</span> and future form factors.</h1>
+		<h3 class="sc">plus one thing:</h3>
+		<h1>I’m unique among peers for being both rigorously analytical and especially playful (sometimes funny).</h1>
+		
+		</template>
+	
+	<script>
+	  Polymer({
+	  
+	  });
+	  	</script>
+</polymer-element>
