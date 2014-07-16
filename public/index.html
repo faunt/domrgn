@@ -7,14 +7,14 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <script src="../bower_components/platform/platform.js"></script>
+    <script src="bower_components/platform/platform.js"></script>
     
-    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/polymer/polymer.html">
     
-    <link rel="import" href="../components/font-tisa/font-tisa.html">
-    <link rel="import" href="../components/dom-scaffold/dom-scaffold.html">
-	<link rel="import" href="../bower_components/core-item/core-item.html">
-    <link rel="import" href="../bower_components/core-menu/core-submenu.html">
+    <link rel="import" href="components/font-tisa/font-tisa.html">
+    <link rel="import" href="components/dom-scaffold/dom-scaffold.html">
+	<link rel="import" href="bower_components/core-item/core-item.html">
+    <link rel="import" href="bower_components/core-menu/core-submenu.html">
     <style shim-shadowdom>
 
       body {
@@ -82,15 +82,15 @@
     		
     		<core-item label="Welcome" tag="welcome" url="../components/dom-welcome/demo.html" icon="home"></core-item>
     		
-    		<core-submenu label="Case Studies" icon="expand-more">
-    				<core-item label	="App Social"></core-item>
-    				<core-item label	="Partners Film"></core-item>
+    		<core-submenu label="Case Studies" icon="expand-more" tag="case-studies" url="../components/material-playground-master/">
+    				<core-item label="App Social" url="../components/dom-app-social/" tag="app-social"></core-item>
+    				<core-item label="Partners Film"></core-item>
     		</core-submenu>	
-    			<core-item label="Portfolio" icon="work"></core-item>
+    			<core-item label="Portfolio" icon="work" tag="portfolio" url="../bower_components/core-animated-pages/demos/music.html"></core-item>
     		<core-submenu label="Process" icon="expand-more">
     				<core-item label="Wisecracks" tag="wisecracks" url	="https://medium.com/@faunts/wisecracks-71a75ecf63cc?source=tw-6cc86f14fd3a-1405348206690"></core-item>
     				<core-item label="Standing desk"></core-item>
-    				<core-item label	="Polymer"></core-item>
+    				<core-item label="Polymer"></core-item>
     		</core-submenu>
     		<core-item label="Blog" icon="label-outline"></core-item>
     		

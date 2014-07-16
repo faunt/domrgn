@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+  <title>App Social</title>
+
+  <script src="../../bower_components/platform/platform.js"></script>
+  <link href="../../bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+  <link rel="import" href="../font-tisa/font-tisa.html">
+
+  <style>
+    body {
+      font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2", serif;
+      padding: 20px;
+      -webkit-tap-highlight-color: #2baf2b;
+    }
+    ::selection, ::-moz-selection {
+    background: #12c700;
+    	color: #fff;
+    }
+    .copy p {
+    	font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+   //     top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+
+      #details {
+        padding: 200px 10% 0;
+      }
+
+      .card {
+        height: 400px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 400px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background:{{item.color}};" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero on-tap="{{transition}}">
+          <div class="card-left" style="background:{{selectedAlbum.color}};" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+              <div>
+                <div class="card-icon" style="background:{{selectedAlbum.color}};"></div>
+              </div>
+              <div flex>
+                <div class="card-album-title">{{selectedAlbum.album}}</div>
+                <div class="card-album-artist">{{selectedAlbum.artist}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+        { artist: 'User model', album: 'Concept', color: '#f4db33' },
+        { artist: 'Wires, flows & journeys', album: 'Storyboards', color: '#972ff8' },
+        { artist: 'Keynote, Origami, et al', album: 'Prototypes', color: '#7dd6fe' },
+        { artist: 'Usability studies', album: 'Research', color: '#dc3c84' }
+      ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="copy">
+  	<p>Biodiesel disrupt wolf, salvia hella fingerstache art party XOXO sriracha Odd Future Etsy banjo selfies semiotics actually. Stumptown occupy shabby chic locavore forage, crucifix Shoreditch messenger bag ennui gastropub. Pickled fixie scenester, farm-to-table bespoke asymmetrical irony. Raw denim +1 aesthetic mustache. Distillery bicycle rights Pitchfork fashion axe chia gluten-free. XOXO readymade craft beer four loko Wes Anderson fanny pack cray, polaroid +1 Austin Blue Bottle street art cliche. Keffiyeh ennui pour-over actually tattooed, shabby chic 8-bit Carles yr bitters squid plaid.</p>
+  	<p>Locavore small batch gentrify, irony street art put a bird on it Vice bespoke distillery. Cornhole Tumblr brunch kale chips PBR dreamcatcher whatever, Echo Park fap keffiyeh cray farm-to-table. Selfies retro tote bag, polaroid kogi raw denim brunch gastropub flexitarian fanny pack banh mi butcher. Lo-fi Etsy raw denim twee. Echo Park ennui farm-to-table, Austin crucifix leggings post-ironic narwhal hashtag disrupt VHS photo booth. Pitchfork fingerstache Banksy aesthetic, Truffaut hashtag High Life. Yr skateboard Etsy, Godard brunch banh mi flexitarian shabby chic jean shorts next level small batch artisan fashion axe Schlitz squid.</p>
+  	  <music-demo></music-demo>
+   	<p>Try-hard Godard shabby chic keytar, aesthetic 8-bit biodiesel Neutra crucifix tote bag mixtape mustache. Bespoke Intelligentsia art party cornhole, forage yr 8-bit wolf single-origin coffee DIY American Apparel cardigan. Pitchfork Austin 3 wolf moon, lomo pug fashion axe ennui cray sartorial leggings YOLO distillery salvia. 8-bit pug roof party direct trade. Twee umami Echo Park, kitsch meggings street art synth Banksy gastropub hashtag 8-bit. Meggings Wes Anderson lo-fi street art, umami iPhone direct trade deep v synth gastropub Kickstarter Thundercats Neutra. Church-key American Apparel meggings scenester chia, YOLO mixtape wayfarers distillery polaroid VHS chambray.</p>
+  	<p>Carles quinoa Kickstarter Intelligentsia master cleanse, bitters scenester cornhole single-origin coffee you probably haven't heard of them vegan Bushwick gluten-free flannel art party. Swag asymmetrical wolf brunch yr. Hoodie art party letterpress, polaroid High Life umami twee lomo flexitarian vinyl typewriter 90's small batch drinking vinegar crucifix. Wayfarers Tumblr Odd Future deep v Shoreditch try-hard pug. Brunch Helvetica jean shorts wayfarers farm-to-table iPhone cray tousled Odd Future. Flexitarian Brooklyn +1 Vice, kogi biodiesel art party VHS before they sold out. IPhone biodiesel next level cardigan tote bag art party.</p>
+  </div>
+  
+  
+</body>
+</html>
