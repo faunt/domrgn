@@ -1,0 +1,152 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/font-roboto/roboto.html">
+<link rel="import" href="../../bower_components/core-icons/iconsets/device-icons.html">
+<link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+
+<link rel="import" href="../../bower_components/core-drawer-panel/core-drawer-panel.html">
+
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/core-item/core-item.html">
+
+<link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
+<link href="../../bower_components/core-animated-pages/transitions/slide-up.html" rel="import">
+<link href="../../bower_components/core-animated-pages/transitions/list-cascade.html" rel="import">
+
+
+
+
+<polymer-element name="dom-proto" noscript>
+  <template>
+  	<style>
+  	html, body {
+  		height: 100%;
+  		margin: 0;
+  	}
+  
+  	main {
+  		font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial;
+  		background: #e1f5fe;
+  		color: #fff;
+  		height: 100%;	
+  	}
+  	#systray  {
+		text-align: right;
+		background:#333;
+//		opacity: 0.5;
+		color: #999;
+		padding: 5px;
+		top: 0;
+  	}
+  	
+  	core-header-panel {
+  	  height: 100%;
+  	  overflow: none;
+  	  -webkit-overflow-scrolling: touch;
+  	}
+  	core-toolbar {
+  	  color: #999;
+  	  background: #333;
+  	}
+  	paper-fab {
+  		background: #666;
+  		color: #fff;
+  		bottom: -28px;
+  		right: 28px;
+  		position: absolute;
+  		z-index: 5;
+  	}  	
+  	paper-item {
+  		font-size: 2em;
+  		font-weight: 100;
+  		padding: 1em 1em;
+  	}
+  	::shadow paper-ripple {
+  	  color: #e65100;
+  	}
+  	
+  	[drawer] {
+  		font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial;
+  		background: #333;
+  		color: #999;
+  	}
+  	[drawer] core-item {
+  		margin-left: 1em;
+  	}
+  	[drawer] core-toolbar {
+  		color: #fff;
+  		margin-left: 1em;
+  	}
+  	[drawer] core-icon {
+  		color: #333;
+  	}
+  	
+  	core-animated-pages {
+  	  height: 100%;
+  	}
+  	
+  	</style>
+  	
+  <!--	<core-drawer-panel vertical layout fullbleed style="height: 100%;">
+  	  <div drawer>
+  	  <div id="systray">
+  	  	<core-icon icon="device:bluetooth"></core-icon>
+  	  </div>
+  	  
+  	  <core-header-panel mode="seamed" fit>
+  	  	
+  	    <core-toolbar>
+  	    	Knock Knock!
+  	    </core-toolbar>
+  	    <core-item icon="settings">Settings</core-item>
+  	    <core-item icon="more-vert">About</core-item>
+  	  </core-header-panel>
+  	</div>
+  	-->
+  	<main>
+  	 	 <div id="systray">
+  	 	  		<core-icon icon="device:signal-wifi-2-bar"></core-icon>
+  	 	  		<core-icon icon="device:network-cell"></core-icon>
+  	 	  		<core-icon icon="device:bluetooth"></core-icon>
+  	 	  		12:30
+  	 	 </div>
+  	 	      	 
+  	 	<core-header-panel>
+  	 	  <core-toolbar>
+  		 	  <paper-icon-button icon="menu" onclick="document.querySelector('core-drawer-panel').togglePanel();"></paper-icon-button>
+  		 	  Nearby
+  	 	  
+  	 	   <paper-fab icon="add" class="bottom"></paper-fab>
+  	 	  
+  	 	  </core-toolbar>
+  	 	  
+  	 	   	  
+  	 	  <div content>
+  	 	  
+  <!--		<core-animated-pages selected="{{page}}" transitions="hero-transition slide-up slide-down cross-fade list-cascade" on-core-animated-pages-transition-end="{{complete}}">
+  	--> 	  	
+  	 	  	<paper-item style="background: #1de9b6;">The Smiths</paper-item> 
+  	 	  	<paper-item style="background: #ffe082; color: #000;">Jon with the pug</paper-item> 
+  			<paper-item style="background: #ef6c00;">Mr &amp; Mrs Jones</paper-item> 
+  			<paper-item style="background: #0091ea;">Guy @ 29b</paper-item>
+  			<paper-item style="background: #ff9e80; color: #000;">Rishi K</paper-item>
+  	 	  
+  	 	 <!-- </core-animated-pages> -->
+  	 	  
+  	 	  </div>
+  	 	</core-header-panel>  
+  	 	
+  	  	<!-- global device actions -->
+  	  	</main>
+  	
+ <!-- 	</core-drawer-panel> -->
+  	
+ 	  
+  </template>
+
+</polymer-element>

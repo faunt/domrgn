@@ -1,0 +1,227 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/font-roboto/roboto.html">
+<link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../../bower_components/core-drawer-panel/core-drawer-panel.html">
+<link rel="import" href="../../bower_components/core-item/core-item.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+<link rel="import" href="../../bower_components/core-icons/iconsets/device-icons.html">
+<link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+
+<polymer-element name="dom-proto">
+  <template>
+  	<style>
+  	core-animated-pages {
+  	  position: absolute;
+  	  top: 0;
+  	  left: 0;
+  	  right: 0;
+  	  bottom: 0;
+  	}
+  	#page1 {
+  		font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial;
+  		background: #e1f5fe;
+  		color: #fff;
+  	//	height: 800px;	
+  	}  	
+  	#systray  {
+		text-align: right;
+		background:#333;
+//		opacity: 0.5;
+		color: #999;
+		padding: 5px;
+		top: 0;
+  	}
+  	
+  	core-header-panel {
+  	  height: 100%;
+  	  overflow: none;
+  	  -webkit-overflow-scrolling: touch;
+  	}
+  	core-toolbar {
+  	  color: #999;
+  	  background: #333;
+  	}
+  	[main] paper-fab {
+  		background: #666;
+  		color: #fff;
+  		bottom: -28px;
+  		right: 28px;
+  		position: absolute;
+  		z-index: 5;
+  	}  	
+  	paper-item {
+  		font-size: 2em;
+  		font-weight: 100;
+  		padding: 1em 1em;
+  	}
+  	::shadow paper-ripple {
+  	  color: #e65100;
+  	}
+  	#ripple {
+  		color: #000 !important;
+  		
+  	}
+  	[drawer] {
+  		font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial;
+  		background: #333;
+  		color: #999;
+  		font-size: 2em;
+  		font-weight: 100;
+  	}
+  	[drawer] core-item {
+  		margin-left: 1em;
+  	}
+  	[drawer] core-toolbar {
+  		color: #fff;
+  		margin-left: 1em;
+  	}
+  	[drawer] core-icon {
+  		color: #333;
+  		fill: #333;
+  	}
+  	[drawer] paper-fab {
+  		background: #c6ff00;
+  		color: #000;
+//  		bottom: 200px;
+  		left: 80px;
+  		top: -50px;
+//  		position: absolute;
+  		z-index: 5;
+  	}
+  	[drawer] #user {
+  	//	width: 200px;
+  		margin-left: 13px;
+  		position: absolute;
+  		bottom: 2em;
+  	}
+  	
+  	[drawer] #user h4 {
+  		font-size: 0.35em;
+  		text-align: center;
+  		text-transform: uppercase;
+  		letter-spacing: 0.1em;
+  		margin: 0;
+  		color: #666;
+  	}
+  	
+  	[drawer] #user h3, [drawer] #user p , [drawer] #user core-item {
+  		color: #9e9d24;
+  		font-weight: 300;
+  		font-size: 0.5em;
+  		text-align: center;
+  	}
+  	[drawer] #user paper-input {
+  		font-size: 1em;
+  		width: 213px;
+  		text-align: center;
+  		color: #9e9d24;
+  	}
+  	
+  	[drawer] #user paper-input /deep/ .focusedColor {
+  		color: #666;
+  		background: #9e9d24;
+  	}
+  	
+  	[drawer] #user core-item {
+  		margin-left: 60px;
+  	}
+  	@media all and (max-width: 480px) {   
+  		[drawer] {
+  			font-size: 1.25em;
+  		}
+  	}
+  	</style>
+  	
+ <core-drawer-panel responsiveWidth="1920px" id="knockDrawer" vertical layout fullbleed>
+		 <div id="drawer" drawer>
+		  
+		   <core-header-panel mode="waterfall-tall" fit>
+		   	
+		     <core-toolbar >
+		     	<span class="middle">Knock Knock!</span>
+		     </core-toolbar>
+		     <core-item icon="settings">Settings</core-item>
+		     <core-item icon="more-vert">About</core-item>
+		     <div id="user" >
+			     <paper-fab icon="accessibility" class="mini" id="user"></paper-fab>
+			     <h4>Who’s there?</h4>
+			     <paper-input label="bluedoor" ></paper-input>
+			     <p>Unit 107<br/>St George St.</p>
+			     <core-item icon="add">New hood</core-item>
+		     </div>
+		   </core-header-panel>
+		 </div>
+		  	
+<!--	<core-animated-pages> -->
+		  	
+ 	<section main id="page1">
+ 	 <div id="systray">
+  		<core-icon icon="device:signal-wifi-2-bar"></core-icon>
+  		<core-icon icon="device:network-cell"></core-icon>
+  		<core-icon icon="device:bluetooth"></core-icon>
+  		12:30
+	 </div>
+ 	    
+ 	<core-header-panel>
+ 	  <core-toolbar>
+	 	  <paper-icon-button icon="menu" on-tap="{{onMenuClick}}" role="button" tabindex="0"></paper-icon-button>
+ 	  Nearby
+ 	  
+ 	   <paper-fab icon="add" class="bottom"></paper-fab>
+ 	  
+ 	  </core-toolbar>
+ 	  
+ 	   	  
+ 	  <div content>
+ 	  	
+ 	  	
+ 	  	 	  	
+ 	  	<paper-item style="background: #1de9b6;" on-tap="{{knock}}" label="The Smiths" id="id1"></paper-item> 
+ 	  	<paper-item id="2" style="background: #ffe082; color: #000;" on-tap="{{knock}}">Jon with the pug</paper-item> 
+ 	  	<paper-item id="3" style="background: #ef6c00;" on-tap="{{knock}}">Mr &amp; Mrs Jones</paper-item> 
+ 	  	<paper-item id="4" style="background: #0091ea;" on-tap="{{knock}}">Guy @ 29b</paper-item>
+ 	  	<paper-item id="5" style="background: #ff9e80; color: #000;" >Rishi K</paper-item>
+ 	  <paper-item id="6" style="background: #ab47bc;" >Saul</paper-item> 
+ 	  	<paper-item id="7" style="background: #c6ff00; color: #000;" >Robert</paper-item> 
+ 	  	<paper-item id="8" style="background: #ffff8d; color: #000;" >{username}</paper-item> 
+ 	  	<paper-item id="9" style="background: #ff3d00;" >{username}</paper-item>
+ 	  	<paper-item id="10" style="background: #a1887f; color: #000;">{username}</paper-item>		
+ 	  
+ 	  
+ 	  </div>
+ 	</core-header-panel>  
+ 	</section>
+ 	
+ 	<section id="page2">
+ 	KNOCK KNOCK SENT!
+ 	
+ 	</section>
+<!-- 	</core-animated-pages> -->
+  	
+  </core-drawer-panel>
+  
+  	<!-- global actions -->
+  </template>
+	<script>
+	  Polymer('dom-proto', {
+	  onMenuClick: function() {
+		this.$.knockDrawer.togglePanel();
+	  },	
+	  
+	  knock : function() {
+	  	console.log('knock knock sent');
+	//  	this.$.neighbour.str.replace("The Smiths", "Knock knock! sent");
+	//	this.$('#neighbour').str.replace("The Smiths", "Knock knock! sent");
+	 
+	  }
+	  
+				
+	  });
+  	</script>
+  
+</polymer-element>

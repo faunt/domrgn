@@ -1,0 +1,259 @@
+* {
+  /*box-sizing: border-box;*/
+}
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial;
+  font-weight: 300;
+  background-color: #f1f1f3;
+}
+h1, h2, h3 {
+  font-weight: 300;
+  margin: 0;
+}
+h1 {
+	line-height: 1.15em;
+}
+h1 ol {
+	line-height: 1.5em;
+}
+h3 {
+  font-weight: 400;
+}
+/*core-drawer-panel {
+  background-color: #ccc;
+}*/
+
+core-header-panel  {
+  height: 100%;
+}
+
+polyfill-rule {
+  content: 'core-header-panel #mainContainer' ;
+  left: 45% !important;
+}
+core-header-panel[mode="cover"]::shadow #mainContainer {
+  width: 465px;
+  left: 50%;
+  margin-left: calc(-465px/2);
+}
+
+core-header-panel::shadow #mainContainer::-webkit-scrollbar { 
+  display: none; 
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+}
+
+main x-card {
+  margin: 16px;
+}
+x-card.img::shadow #cardcontent {
+	display: none;
+}
+
+stack {
+	max-width: ;
+}
+
+
+paper-fab {
+  background-color: #d1c4e9;
+  /*position: relative; */
+  position: absolute;
+  bottom: -27px;
+  right: 1em;
+  z-index: 10;
+}
+paper-fab::shadow core-icon {
+	fill: #673ab7;
+}
+
+paper-fab.mini {
+  bottom: -20px;
+}
+
+x-card#hovercard {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+}
+x-card#hovercard::shadow #cardcontent {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/*paper-fab[icon$="gamepad"] {
+  background-color: black;
+}*/
+#hovercard paper-icon-button::shadow /deep/ path {
+  fill: #777;
+}
+
+.marginalia {
+	width: 200px;
+	opacity: 0.5;
+	font-style: italic;
+	margin: 16px;
+	float: left;
+}
+.wires img {
+
+ width: 30%;
+ margin-right: 3%;
+ margin-bottom: 4em;	
+}
+.sketches img {
+	max-width: 66%;
+}
+
+
+/* -------------------------------------------------------------------------- */
+paper-checkbox {
+	margin-top: 1em;
+	width: 100%;
+}
+paper-checkbox.strike::shadow #checkboxLabel {
+	text-decoration: line-through;
+	opacity: 0.5;
+}
+
+paper-radio-group paper-radio-button {
+  padding-left: 0 !important;
+}
+paper-toggle-button {
+  vertical-align: middle;
+  margin-left: 35px;
+}
+
+paper-input,
+paper-slider,
+paper-progress {
+  width: 100%;
+}
+
+paper-input /deep/ .focusedColor {
+  background: #dd2c00;
+  color: #dd2c00;
+}
+
+paper-button[raisedButton] {
+  color: #fff;
+  background: #dd2c00;
+}
+
+paper-slider::shadow #sliderKnobInner,
+paper-slider::shadow #sliderKnobInner::before,
+paper-slider::shadow #sliderBar::shadow #activeProgress {
+  background-color: #dd2c00;
+}
+
+paper-progress.red::shadow #activeProgress {
+  background-color: red;
+}
+
+paper-progress.red::shadow #secondaryProgress {
+  background-color: #f8bbd0;
+}
+paper-button[default] {
+  color: #4285f4;
+}
+paper-button + paper-button {
+  margin-left: 8px;
+}
+
+paper-tabs, core-toolbar {
+  background-color: #dd2c00;
+  color: #fff;
+}
+
+paper-tabs {
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+}
+/*paper-tabs paper-tab.core-selected {
+  color: red;
+}*/
+
+.heading {
+  color: #dd2c00;
+}
+
+dom-proto {
+	font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial;
+	background: #f1f1f1;
+	color: #fff;
+}
+#container {
+	position: absolute;
+	width: 378px;
+	height: 673px;
+	margin-top: -854px;
+	margin-left: 106px;
+	
+	overflow-y: hidden;
+}
+
+#proto-about {
+width: 30%;
+float: right;
+margin-top: 200px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #673ab7;
+	text-decoration: none;
+}
+
+@media all and (max-width: 400px) {   
+  core-header-panel[mode="cover"]::shadow #mainContainer {
+    left: 50%;
+    width: 275px;
+    margin-left: calc(-275px/2);
+  }
+  core-toolbar,
+  x-card h2 {
+    font-size: 5vw;
+  }
+  x-card img {
+    height: 150px !important;
+  }
+  
+  
+  core-toolbar > * {
+    margin: 0 !important;
+  }
+  core-toolbar [icon="search"] {
+    display: none;
+  }
+  #themetoggle {
+    margin-left: 15px;
+    bottom: 15px;
+  }
+  #hovercard {
+    display: none;
+  }
+  paper-fab.mini {
+    position: absolute;
+  }
+  paper-fab {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+  }
+}

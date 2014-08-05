@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Concept</title>
+  <link rel="stylesheet" href="concept.css" shim-shadowdom>
+  <script src="../../bower_components/platform/platform.js"></script>
+  <link rel="import" href="elements.html">
+</head>
+<body unresolved>
+
+<core-header-panel condenses keepCondensedHeader mode="waterfall-tall">
+
+<core-toolbar class="tall">
+  <paper-icon-button icon="arrow-back"></paper-icon-button>
+  <span flex>Concept</span>
+  <paper-icon-button icon="search"></paper-icon-button>
+  <paper-icon-button icon="more-vert"></paper-icon-button>
+  <paper-fab icon="check"></paper-fab>
+</core-toolbar>
+
+<main>
+	
+	<x-card z="0" zHover="1">
+	<h3>Concept to dos:</h3>
+	<paper-checkbox label="3 or 4 initial directions" class="strike" checked></paper-checkbox>
+	<paper-checkbox label="engagement levels"></paper-checkbox>
+	<paper-checkbox label="happy flow" class="strike" checked></paper-checkbox>
+	<paper-checkbox label="address barriers to entry"></paper-checkbox>
+	<paper-checkbox label="proposition"></paper-checkbox>	
+	</x-card>
+	
+	<img src="imgs/enablers.png">
+	
+
+	<x-card z="1" zHover="2" style="width: 30%;">
+	<h1 class="heading">Engagement levels</h1>
+	<p>Tailor experience for users at various levels of engagement with the product, and in community itself.</p>
+	<p>Emphasis on Level 1 experience. Aim for compelling product proposition for least engaged. Expect this to be largest user segment.</p>
+	<p></p>
+	</x-card>
+
+	<x-card>
+	<img src="imgs/levels.jpg">
+	<h3 class="heading">Level 1</h3>
+	<p>Barely there. First time user, but also almost everyone else. Low attention and interest in product. More likely to ignore then contribute.</p>
+	<h3 class="heading">Level 2</h3>
+	<p>Still only <em>consuming</em> rather than <em>producing</em> content. May be willing to personalise in some way, e.g. sign in, filter for interests</p>
+	<h3 class="heading">Level 3</h3>
+	<p>Passive participation</p>
+	<h3 class="heading">Level 4</h3>
+	<p>Active contributor</p>
+	…
+	</x-card>
+	
+	<x-card z="1" zHover="2">
+	<img src="imgs/rundown.png" style="padding: 25px; max-width: 80%;">
+	</x-card>
+
+	<x-card z="1" zHover="2" style="background: #e8eaf6;">
+	<img src="imgs/challenges.png">
+	</x-card>
+	
+	
+	
+	<x-card z="0" zHover="3">
+	<img src="imgs/yo.png">
+	<h3>Delightfully simple. People ascribe their own meanings to things relevant to their context, to a particular relationship.</h3>
+	</x-card>
+	
+	<x-card z="1" zHover="2" style="width: 80%; clear: left;">
+	<img src="imgs/notification.jpg">
+	<em></em>
+	<img src="imgs/knockknock.png" style="width: 25%; margin: 25px; float: right;">
+	How would you do Yo! without phone numbers?
+	</x-card>
+	<div class="marginalia">Risk in being derivative. Expect lower score for inventiveness, but probably relaxed / justified if aim is to respect 3hr time constraint.</div>
+	
+	<div style="clear: left; margin-left: 25px;">
+	<h1 class="heading" >Search for a neighbour by address</h1>
+	<h3>User journey “happy flow”</h3>
+	</div>
+	
+	<x-card z="1" zHover="2" style="width: 70%;">
+	<img src="imgs/happyflow.jpg">
+	<img src="imgs/outreach.jpg">
+	</x-card>
+	<div class="marginalia" style="width: 20%">
+	Man from house with blue door (username “bluedoor”) wants to connect with new neighbour, who’s not answered the door.
+	<ol><li>Launches app. Taps + to find new neighbour.</li>
+	<li>Opts to find by address.</li>
+	<li>Button from 2. animates into input field. Virtual keyboard overlays.</li>
+	<li>a. Match with existing user. Tap to “knock”.<br />b. Prompt to print flyer to drop through letterbox. Flyer promotes app available in Play, iOS, and Windows Phone Store. QR code with link to launch on device.</li>
+	<li>a. Confirmation state.<br/>b. Rishi K receives notification.</li>
+	<li>Bluedoor returns to homescreen where Rishi K has been added.</li>
+	</ol>
+	</div>
+	
+
+	
+
+</main>
+
+
+</core-header-panel>
+
+<script>
+  
+  function toggleDialog(transition) {
+    var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
+    dialog.toggle();
+  }
+ 
+  
+  
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4971127-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

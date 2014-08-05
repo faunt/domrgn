@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Knock Knock!</title>
+  <link rel="stylesheet" href="app.css" shim-shadowdom>
+  <script src="../../bower_components/platform/platform.js"></script>
+  <link rel="import" href="elements.html">
+</head>
+<body unresolved>
+
+<core-header-panel condenses keepCondensedHeader mode="waterfall-tall">
+
+<core-toolbar class="tall">
+  <paper-icon-button icon="menu"></paper-icon-button>
+  <span flex>Designing Knock Knock!</span>
+  <paper-icon-button icon="search"></paper-icon-button>
+  <paper-icon-button icon="more-vert"></paper-icon-button>
+  <paper-fab icon="visibility"></paper-fab>
+</core-toolbar>
+
+<main>
+
+  
+  <x-card z="1" zHover="2">
+  <dom-paper z="2" zHover="4" style="max-width: 200px;margin-top: 50px;">
+  <img src="imgs/brief.gif">
+  </dom-paper>
+  <div style="margin-left: 224px;">
+  	<h3 class="heading">Contents</h3>
+    <h2>Including a low-fidelity overview of the product. Sketches, wireframes, and concept models are used in describing the solution.</h2>
+    <h2 style="margin-top: 1em;">A high-fidelity mockup for one interaction.</h2>
+    
+    <h1 style="margin-left: 1em;"><ol>
+    	<li>Research</li>
+    	<li>Concept</li>
+    	<li>Prototype</li>
+    	<li>Summary</li>
+    </ol>
+    </h1>
+    </div>
+    
+  </x-card>
+  <x-card z="1" zHover="2">
+  	<h3 class="heading">§1 Research</h3>
+	
+  	<dom-paper z="1" zHover="3" style="max-width: 200px; float: right; margin-right: -50px;">
+  		<img src="imgs/mending-wall.jpg" >
+  	</dom-paper>
+  	
+  	<img src="imgs/froststamp.gif" style="float: left; margin-right: 24px; width: 200px;">
+  	<div style="margin-right: 200px;">
+  	<h1>“Good <em>fences</em> make good neighbours”</h1>
+  	<p><em>But do they?</em> I take this to be the central question of Frost’s poem. Is there a clue in how to approach design solution in light of this irony?</p>
+  	<p>Take seriously the charge that <em>apps</em>, like <em>fences</em>, can be potential barriers to human connectedness. Look for a software solution that gets out of the way, ushers users back into their physical neighbourhood.</p>
+  	</div>
+  	
+  	
+  	<x-card z="0" style="background: #fbe9e7; color: #f4511e; width: 66%; margin-top: 48px; clear: left;">
+  		<h3>Initial design goal:</h3>
+  		<h1><strike>Build relationships with neighbour</strike></h1>
+  		<h2 style="color: #666;">This quick survey suggests the real win is in building respect for difference. Adopt a new design constraint to “build relationships” by confronting difference, not merely celebrating sameness.</h2>
+  	</x-card>
+  	
+  	<div style="margin-left: 224px; margin-bottom: 24px;">
+  	<core-icon icon="arrow-forward" style="float: left; margin-left: -36px; fill:#673ab7;"></core-icon> 
+  	<h3 style="color: #673ab7;">Refined design goal:</h3>
+  	<h1 style="font-size: 3em; color: #673ab7;">Relieve the pressure to find something meaningful to say.</h1> 
+  	<h3 style="margin-top: 1em;">Favour real-world connectedness. Nurture debate, thought, and respect for conflicting interests of others — maybe offline.</h3> <h3 style="margin-top: 1em;"> This is roughly the upshot of my <a href="../dom-uni/research.html#paper" target="_blank"><em>Educating the Community</em></a> paper and this condensed scan through research. (Available as <a href="../dom-uni/research.html" target="_blank">Appendix §1</a>).</h3>
+  	</div>
+  	
+  </x-card>
+	<x-card z="1" zHover="2">
+		<h3 class="heading">§2 Concept</h3>
+		
+		
+		<img src="imgs/rundown.png" style="max-width: 200px; float: right; position: absolute;">
+	
+	<div style="clear: left; margin-left: 224px;">
+	
+	<h1 class="heading" style="font-size: 3em;">Evaluate app propositions</h1>
+	<h2 style="margin-top: 1em;">1. A messaging client misses the force of the point: coming up with a message for new neighbour is too hard!</h2>
+	<h2 style="margin-top: 1em;">2. Skill sharing and tool swapping feel idealistic and quaint. Risky premise that ‘neighbours only as good as their tools’ or <em>insofar as benefits me</em> when aiming to build respect and tolerance for difference.</h2>
+	<h2 style="margin-top: 1em; margin-bottom: 1em;">3. <strike>Yo! Neighbour</strike> “Knock Knock!” would be straightforward execution, but still sophisticated solution. Avoids risk of getting lost in complex features. Connects people without getting in the way. Plus a good chance to talk about Yo! which would be interesting. Chance I’d even knock out a prototype (Polymer or Keynote).</h2>
+	<h2 style="margin: 1em 0;">4. <strike>too much Tinder</strike></h2>
+	</div>
+	
+		<h1 class="heading" style="font-size: 3em; clear: left; margin-left: 224px;">Problems to solve</h1>
+	<img src="imgs/challenges.jpg" style="max-width: 100%; margin: 1em 0;">
+	
+	<div style="clear: left; margin-left: 224px;">
+	<h1 class="heading" style="font-size: 3em;">Engagement levels</h1>
+	<h2 style="margin-top: 1em;">Tailor experience for users at various levels of engagement with the product, and in community itself.</h2>
+	<h2 style="margin-top: 1em;">Emphasis on Level 1 experience. Aim for compelling product proposition for least engaged. Expect this to be largest user segment.</h2>
+	<img src="imgs/levels.jpg" style="max-width: 100%; margin: 1em 0;">
+	
+	<h1 class="heading" style="font-size: 3em;">Yo! Neighbour: “Knock Knock!”</h1>
+
+	<h2 style="margin: 1em 0;">Delightfully simple. Pebble thrown at your window, or a knock at your door. People ascribe their own meanings to signals relevant to context, to a particular relationship.</h2><h2 style="margin: 1em 0;"> If "yo" meant “knock knock”, would neighbours come together to build better relationships with each other?</h2>
+		<img src="imgs/yo.png" style="max-width: 100%;">
+		<img src="imgs/notification.jpg" style="max-width: 100%;">
+	</div>
+		
+	
+	<div style="clear: left;">
+	<h1 class="heading" >Search for a neighbour by address</h1>
+	<h3>User journey “happy flow”</h3>
+	</div>
+	
+	<div>
+		<div class="marginalia " style="width: 20%; float: right;">
+		Man from house with blue door (username “bluedoor”) wants to connect with new neighbour, who’s not answered the door.
+		<ol><li>Launches app. Taps + to find new neighbour.</li>
+		<li>Opts to find by address.</li>
+		<li>Button from 2. animates into input field. Virtual keyboard overlays.</li>
+		<li>a. Match with existing user. Tap to “knock”.<br />b. Prompt to print flyer to drop through letterbox. Flyer promotes app available in Play, iOS, and Windows Phone Store. QR code with link to launch on device.</li>
+		<li>a. Confirmation state.<br/>b. Rishi K receives notification.</li>
+		<li>Bluedoor returns to homescreen where Rishi K has been added.</li>
+		</ol>
+		</div>
+		
+		<div class="sketches">
+		<img src="imgs/happyflow.jpg">
+		<img src="imgs/outreach.jpg">
+		</div>
+	</div>
+	
+	<div class="wires">
+		<img src="imgs/smiths.jpg" />
+		<img src="imgs/smiths-ripple.jpg"/>
+		<div class="marginalia" style="float: left;">
+		<p>Demonstrate Material Design “ripple” effect on touch.</p>
+		</div>	
+	</div>
+	
+	
+	
+	<iframe width="100%" height="720" src="//www.youtube.com/embed/ryAuLRDr_bc" frameborder="0" allowfullscreen wmode=”transparent”></iframe>
+	<div class="marginalia"><p>Process: making use of platform UI toolkit and documentation.</p><p>Aim to make documentation for this exercise on par in sophistication to Material Design’s.</p></div>
+	
+	<h1 style="margin: 0.5em; font-size: 6em;">Menu drawer</h1>
+	
+	<div class="wires">
+	<img src="imgs/drawer.jpg" style="float: left;">
+	<p style="max-width: 33%; float: left;">Documentation goes here food truck seitan bitters, pork belly raw denim Portland PBR&B Intelligentsia Wes Anderson normcore pug fixie cliche banh mi XOXO. Post-ironic gastropub direct trade, you probably haven't heard of them Portland Pitchfork actually Truffaut VHS pop-up. Polaroid deep v dreamcatcher Schlitz, squid pug chambray readymade Brooklyn. YOLO Brooklyn Intelligentsia Tonx, dreamcatcher drinking vinegar distillery occupy forage gluten-free. Pickled Tumblr mlkshk shabby chic, crucifix American Apparel fashion axe readymade dreamcatcher. Mlkshk normcore flannel pickled, American Apparel mumblecore dreamcatcher. Keffiyeh gentrify synth occupy, authentic 8-bit yr tousled blog Portland.
+	
+	</p>
+	</div>
+	</x-card>  
+	
+	<x-card z="1" zHover="2">
+		<h3 class="heading">§3 Prototype</h3>
+		<img src="imgs/nexus.png" style="height: 1000px;margin:0 auto;">
+		
+		<div id="container">
+			<dom-proto></dom-proto>
+		</div>
+		
+		<div id="proto-about">
+			<h1>Demonstrating sidebar menu transition.</h1>
+			<h1 style="margin-top: 1em;">Sidebar helps me stay in control. Contains user profile, editable inline.</h1>
+			<p>Shows “ripple” on-tap behaviour. Plus persistent toolbar behaviour on user scroll.</p>
+			<p>Interactive prototype built using Polymer framework. (Click around on the phone at left!)</p>
+			<p>Runs native in browser and on device browser for clickable prototype.</p>
+			<div class="marginalia">
+			<p>*Not yet mastered many of Polymer’s interaction components. But stretch goal here would be to add after more investigation.</p>
+			<p></p>
+			</div>
+		</div>
+		
+		<div style="margin-left: 225px;">
+			<h3 class="heading">§4 Summary</h3>
+			<h1 class="heading" style="font-size: 3em;">Who’s there?</h1>
+			<h2>Good neighbours spend less time hiding in apps and more time talking. By breaking down fences of isolated app interactions, “Knock Knock!” brings communities together.</h2><h2 style="margin-top: 1em;">Simple, stupid, provocative app proposition brings people out of their homes and into face-to-face dialogue. Building respect and tolerance for the divergent attitudes of others is the first step to healthier neighbourhoods.</h2>
+			
+		</div>
+		
+		
+	</x-card>
+	
+	</main>
+
+<!--
+TODO: best way to change paper-shadow z on hover?
+-->
+
+</core-header-panel>
+
+<script>
+  
+  function toggleDialog(transition) {
+    var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
+    dialog.toggle();
+  }
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4971127-4', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

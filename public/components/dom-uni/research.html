@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Research</title>
+  <link rel="stylesheet" href="research.css" shim-shadowdom>
+  <script src="../../bower_components/platform/platform.js"></script>
+  <link rel="import" href="elements.html">
+</head>
+<body unresolved>
+
+<core-header-panel condenses keepCondensedHeader mode="waterfall-tall">
+
+<core-toolbar class="tall">
+  <paper-icon-button icon="menu"></paper-icon-button>
+  <h3 middle>Appendix §1: Research</h3>
+  <span flex></span>
+  <paper-icon-button icon="search"></paper-icon-button>
+  <paper-icon-button icon="more-vert"></paper-icon-button>
+  <paper-fab icon="arrow-back"></paper-fab>
+</core-toolbar>
+
+<main>
+	
+	<x-card z="0" zHover="1">
+	<h3>Research checklist</h3>
+	<paper-checkbox label="look at Frost poem" class="strike" checked></paper-checkbox>
+	<paper-checkbox label="dig up old uni paper" class="strike" checked></paper-checkbox>
+	<paper-checkbox label="competitor review" class="strike" checked></paper-checkbox>
+	<paper-checkbox label="scope out barriers to entry"></paper-checkbox>
+	<paper-checkbox label="what's the core (social) problem to solve?"></paper-checkbox>
+	<paper-checkbox label="define hypothesis: point of view"></paper-checkbox>
+	</x-card>
+
+	<img src="imgs/froststamp.gif">
+	
+	<x-card z="1" zHover="3" style="float: left;">
+	<img src="imgs/mending-wall.jpg">
+	<div class="marginalia" style="margin-left: 0;">How many candidates start with poetry analysis? Relevant hook to start vs. don’t want to over-emphasize my liberal arts background as limiting of design approach or thinking.</div><div class="marginalia"> (Is this parenthetical doubt enough to sidestep criticism of artsy fartsy tangent?)</div>
+	</x-card>	
+	
+	
+  <x-card z="1" zHover="2">
+  	<h3 class="heading">§1 Clue is in the title</h3>
+    <h1>“Good <em>fences</em> make good neighbours”</h1>
+    <h2><em>But do they?</em> I take this to be the central question of Frost’s poem. Protagonist hopes to dissuade his neighbour from this isolationist mantra. Is there a clue in how to approach design solution in light of this irony?</h2>
+    <ul><li>consider apps as fences, not just bridges but barriers to human connectness</li>
+    <li>overcome barriers through collective effort? Hence <em>mending</em> a common good as in “Mending Wall”</li>
+    <li>apps don’t reach everyone, miss <em>most</em> people. What solution does Frost give?</li>
+    <li>walls not for keeping things <em>out</em> but keeping things <em>in</em>. Can app proposition <highlight>help people keep private things private</highlight></li>
+    </ul>
+  </x-card>
+  <x-card z="1" zHover="2"><h3 class="heading">§2</h3><h1 class="heading">I wrote a paper on this at university</h1>
+  </x-card>
+  <x-card z="1" zHover="2" id="paper">
+  	<paper-dialog transition="paper-dialog-transition-center" backdrop>
+  	       <iframe src="https://docs.google.com/a/faunt.com/file/d/0B4F2Br_q9PF-S2Q3ZFhPNHZMQjg/preview" width="800" height="800"></iframe> 	
+  	       <paper-button dismissive icon="close"></paper-button>
+	  </paper-dialog>
+	  <img src="imgs/saul-1.gif" onclick="toggleDialog('paper-dialog-transition-center')">
+	  <paper-button id="popout" icon="drive-pdf" label="Read the essay" raisedButton
+	                 onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
+	  <paper-button style="float: right;" label="Download" onclick="window.open('https://drive.google.com/file/d/0B4F2Br_q9PF-S2Q3ZFhPNHZMQjg/edit?usp=sharing', '_blank')"></paper-button>
+	  <h3 class="heading">Summary of relevant ideas from <em>Educating the Community</em> paper:</h3>
+	  <ul>
+	  <li>more than opt-in “good Samaritan”: provoke debate to improve understanding and respect for diverse community attitudes </li>
+	  <li>foster respect for ‘neutrality’</li>
+	  <li>confront rather than efface clashing goals and projects(pp 11)</li>
+	  <li>challenge community and <highlight>respect the conflicting interests of others</highlight></li>
+	  <li>need something to engage about</li>
+	  </ul>
+  </x-card>
+  <div class="marginalia"><p>Aim here to demonstrate capacity for philosophical rigor, for finding what’s at stake</p></div>
+  <x-card z="1" zHover="2"><h2>“I simply <highlith>didn’t know how to get this conversation off the ground</highlith>. Maybe <highlight>debate</highlight> is only appropriate <highlight>where conflicts arise</highlight>, as a way of <highlight>addressing social problems</highlight> (like market failures, for instance) that have surfaced naturally. You can’t have worthwhile conversation when nothing seems to be at stake.”</h2>
+  — from my paper <em>Educating the Community: Market Failures and Better Neighbours</em>, UofT 2007 (pp 13)
+  </x-card>
+  
+  
+  <x-card z="1" zHover="2">
+  <h2 class="heading">§3 Hyper local challenges</h2>
+  <paper-checkbox label="transience: moving around" ></paper-checkbox>
+  <paper-checkbox label="schedules: not real-time"></paper-checkbox>
+  <paper-checkbox label="diversity: culture, age, family status and size" ></paper-checkbox>
+  <paper-checkbox label="adverse target market: late adopters, tech avoiders, etc." ></paper-checkbox>
+  <paper-checkbox label="engagement levels" checked class="strike"></paper-checkbox>
+  </x-card>
+  <x-card z="1" zHover="2">
+  <h3 class="heading">§4 Competitor review</h3>
+  <h1>Abundance of existing platforms well positioned to handle hyperlocal.</h1> <p>Facebook and Twitter already platforms of record w/r/t broad user base, likely already reaching your neighbour. To some extent, already connecting around local issues: dog attack in <a href="https://twitter.com/search?q=%23dogattack" target="_blank">#thispark</a>, geotagging content to neighbourhood level, etc.</p>
+  <p>Canonical <em>empty room</em> or <em>cold start</em> problem. Combat with targeted rollouts, seed platform with community events?</p>
+  <p>e.g. <a href="http://voXup.co.uk" target="_blank">voXup.co.uk</a> rallies community to issues, sell to local council (~30 voters = relevance threshold)</p>
+  </x-card>
+  
+  <x-card z="0" zHover="5" style="width: 200px; padding: 25px; clear: both;">
+  <img src="imgs/neighbourhoodwatch.gif">
+  <img src="imgs/neighbourhood_watch.gif">
+  <img src="imgs/neighborhood watch.png">
+  <p style="font-size: 0.8em;">While Neighbourhood Watch brought communities together around a common goal — or shared enemy — seems to have failed at fostering tolerance for the neighbour. All about <em>othering</em>.</p> 
+  </x-card>  
+  <x-card z="1" zHover="2">
+  <img src="imgs/rumi.jpg">
+  <em>“… feel the delight / of walking in the noisy street / and <em>being</em> the noise.”</em> — <a href="http://web.tue.nl/esk/rumi/acommuni.htm" target="_blank">Rumi</a>
+  </x-card>
+  
+  <x-card z="1" zHover="2" style="background-color: #8bc34a; color: #fff;"><h3>Problem to solve:</h3><h1>Relieve the pressure to find something meaningful to say</h1>
+  	<p>while nurturing debate, thought, and respect for conflicting interests of others. Roughly the upshot of my <em>Educating the Community</em> paper and this condensed scan through research.</p>
+  </x-card>
+  <div class="marginalia" style="clear: both;"><p>“Spring is the mischief in me, and I wonder / If I could put a notion in his head:”</p></div>
+  
+  
+  
+</main>
+
+
+</core-header-panel>
+
+<script>
+  
+  function toggleDialog(transition) {
+    var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
+    dialog.toggle();
+  }
+ 
+  
+  
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4971127-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -82,13 +82,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 #drawerPanel[narrow] #card {
-  margin: 0;
+/*  margin: 0;
   box-shadow: none;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 0; */
+  display: block;
+  margin: 128px 100px 60px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 4px, rgba(0, 0, 0, 0.14902) 0px 0px 3px;
+  overflow: hidden;
 }
 
 #drawerPanel[narrow] #frame {
@@ -97,10 +102,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 #drawerPanel[narrow] #frameContainer {
   position: absolute;
-  top: 0;
+/*  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: auto;
+  overflow: auto;*/
+  top: 128px;
+  right: 100px;
+  bottom: 60px;
+  left: 100px;
+  overflow: hidden;
 }
 
