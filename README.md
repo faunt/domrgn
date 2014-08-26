@@ -1,1 +1,1 @@
-Where I attempt to build a portfolio on Polymer’s Core & Paper elements. Pushing through development to <a href="http://development.domrgn.divshot.io/">http://development.domrgn.divshot.io/</a> (masked at <a href="http://domrgn.com">domrgn.com</a>)
+Where I attempt to build a portfolio on Polymer’s Core & Paper elements. Pushing through development to <a href="http://development.domrgn.divshot.io/">http://development.domrgn.divshot.io/</a>

@@ -1,96 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>Knock Knock!</title>
+
   <script src="../../bower_components/platform/platform.js"></script>
-  <link rel="import" href="../../bower_components/polymer/polymer.html">
-  <link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
-  <link rel="import" href="../../bower_components/paper-button/paper-button.html">
-</head>
-<polymer-element name="test-animate">
-  <template>
-	<style>
-	  core-animated-pages {
-	      display: block;
-	      position: absolute;
-	      top: 0;
-	      left: 0;
-	      bottom: 0;
-	      right: 0;
-	    }
-	
-	    section {
-	      text-align: center;
-	      padding-top: 250px;
-	    }
-	
-	    .square {
-	      display: inline-block;
-	      margin: 8px;
-	      padding: 8px;
-	      width: 200px;
-	      height: 200px;
-	      background-color: orange;
-	      color: #fff;
-	    }
-	    #knock {
-	    	background: blue;
-	    }
-	</style>
-	<!-- hero-transition and cross-fade are declared elsewhere -->
-	<core-animated-pages selected="{{page}}" transitions="hero-transition cross-fade">
-	
-	<section on-tap="{{transition}}" layout horizontal center-justified>  
-	  
-	  <div class="square" id="thing1" hero-id="thing" hero="knock" cross-fade="knock">thing 1</div>
-	  <div class="square" id="thing2" hero-id="thing" hero="knock" cross-fade="knock">thing 2</div>
-	
-	</section>  
-	
-	<section id="knock">
-	Knock knock!
-	</section>
-	  
-	</core-animated-pages>
-	
-  </template>
-  <script>
-  
-    Polymer({
-  
-    page: 0,
-    subpage: 0,
+  <link href="../../bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+  <link href="../../bower_components/core-animated-pages/transitions/cross-fade.html" rel="import">
+  <link href="../../bower_components/core-animated-pages/transitions/slide-from-right.html" rel="import">
 
-    transition: function(e) {
-
-      var el = e.target;
-      if (el.id === "thing1") {
-        this.subpage = 0;
-      } else {
-        this.subpage = 1;
-      }
-
-      setTimeout(function() {
-        this.page = 1;
-      }.bind(this), 200);
-    },
-    
-    back: function() {
-      this.page = 0;
+  <style>
+    body {
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
     }
-  
-    });
-  </script>
-</polymer-element>
 
+    core-animated-pages {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      font-size: 72px;
+      overflow: hidden;
+    }
 
+    section > div {
+      height: 100%;
+      color: white;
+    }
+
+  </style>
+
+</head>
 <body unresolved>
-	<test-animate></test-animate>
+  <select onchange="change();">
+    <option value="cross-fade-all" selected>cross-fade-all</option>
+    <option value="slide-from-right">slide-from-right</option>
+  </select>
 
+  <core-animated-pages onclick="stuff();" transitions="cross-fade-all">
+    <section>
+      <div layout vertical center center-justified style="background:red;">
+        <div>1</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:blue;">
+        <div>2</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:purple;">
+        <div>3</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:orange;">
+        <div>4</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:green;">
+        <div>5</div>
+      </div>
+    </section>
+  </core-animated-pages>
+
+  <script>
+    function change() {
+      var s = document.querySelector('select');
+      document.querySelector('core-animated-pages').transitions = document.querySelector('select').options[s.selectedIndex].value;
+    }
+
+    var up = true;
+    var max = 4;
+    function stuff() {
+      var p = document.querySelector('core-animated-pages');
+      if (up && p.selected === max || !up && p.selected === 0) {
+        up = !up;
+      }
+      if (up) {
+        p.selected += 1;
+      } else {
+        p.selected -= 1;
+      }
+    }
+  </script>
 </body>
 </html>
-

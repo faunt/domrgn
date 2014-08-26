@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/font-roboto/roboto.html">
-<link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
+<link href="../../bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+<link href="../../bower_components/core-animated-pages/transitions/hero-transition.html" rel="import">
 <link rel="import" href="../../bower_components/core-drawer-panel/core-drawer-panel.html">
 <link rel="import" href="../../bower_components/core-item/core-item.html">
 <link rel="import" href="../../bower_components/core-icons/core-icons.html">
@@ -22,7 +23,7 @@
   	  right: 0;
   	  bottom: 0;
   	}
-  	#page1 {
+  	#adv {
   		font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial;
   		background: #e1f5fe;
   		color: #fff;
@@ -37,7 +38,7 @@
 		top: 0;
   	}
   	
-  	core-header-panel {
+  	#main, core-header-panel {
   	  height: 100%;
   	  overflow: none;
   	  -webkit-overflow-scrolling: touch;
@@ -135,93 +136,171 @@
   			font-size: 1.25em;
   		}
   	}
+  	.knock div {
+  		padding: 25px;
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		right: 0;
+  		bottom: 0;
+  	}
+  	.knock * {
+  		font-size: 2em;
+		font-weight: 100;  		
+  	}
+  	.knock {
+  		padding: 25px;
+  	}
+  	#knockSmiths {
+  		background: #1de9b6;
+  		color: #fff;
+  	}
+  	#knockJon {
+  		background: #ffe082; 
+  		color: #000;
+  	}
+  	#knockKumar {
+  		background: #ef6c00;
+  	}
+  	#knock29 {
+  		background: #0091ea;
+  	}
+  	
+  	
   	</style>
-  	
- <core-drawer-panel responsiveWidth="1920px" id="knockDrawer" vertical layout fullbleed>
-		 <div id="drawer" drawer>
-		  
-		   <core-header-panel mode="waterfall-tall" fit>
-		   	
-		     <core-toolbar >
-		     	<span class="middle">Knock Knock!</span>
-		     </core-toolbar>
-		     <core-item icon="settings">Settings</core-item>
-		     <core-item icon="more-vert">About</core-item>
-		     <div id="user" >
-			     <paper-fab icon="accessibility" class="mini" id="user"></paper-fab>
-			     <h4>Who’s there?</h4>
-			     <paper-input label="bluedoor" ></paper-input>
-			     <p>Unit 107<br/>St George St.</p>
-			     <core-item icon="add">New hood</core-item>
-		     </div>
-		   </core-header-panel>
-		 </div>
-		  	
-<!--	<core-animated-pages> -->
-		  	
- 	<section main id="page1">
- 	 <div id="systray">
-  		<core-icon icon="device:signal-wifi-2-bar"></core-icon>
-  		<core-icon icon="device:network-cell"></core-icon>
-  		<core-icon icon="device:bluetooth"></core-icon>
-  		12:30
-	 </div>
- 	    
- 	<core-header-panel>
- 	  <core-toolbar>
-	 	  <paper-icon-button icon="menu" on-tap="{{onMenuClick}}" role="button" tabindex="0"></paper-icon-button>
- 	  Nearby
- 	  
- 	   <paper-fab icon="add" class="bottom"></paper-fab>
- 	  
- 	  </core-toolbar>
- 	  
- 	   	  
- 	  <div content>
- 	  	
- 	  	
- 	  	 	  	
- 	  	<paper-item style="background: #1de9b6;" on-tap="{{knock}}" label="The Smiths" id="id1"></paper-item> 
- 	  	<paper-item id="2" style="background: #ffe082; color: #000;" on-tap="{{knock}}">Jon with the pug</paper-item> 
- 	  	<paper-item id="3" style="background: #ef6c00;" on-tap="{{knock}}">Mr &amp; Mrs Jones</paper-item> 
- 	  	<paper-item id="4" style="background: #0091ea;" on-tap="{{knock}}">Guy @ 29b</paper-item>
- 	  	<paper-item id="5" style="background: #ff9e80; color: #000;" >Rishi K</paper-item>
- 	  <paper-item id="6" style="background: #ab47bc;" >Saul</paper-item> 
- 	  	<paper-item id="7" style="background: #c6ff00; color: #000;" >Robert</paper-item> 
- 	  	<paper-item id="8" style="background: #ffff8d; color: #000;" >{username}</paper-item> 
- 	  	<paper-item id="9" style="background: #ff3d00;" >{username}</paper-item>
- 	  	<paper-item id="10" style="background: #a1887f; color: #000;">{username}</paper-item>		
- 	  
- 	  
- 	  </div>
- 	</core-header-panel>  
- 	</section>
- 	
- 	<section id="page2">
- 	KNOCK KNOCK SENT!
- 	
- 	</section>
-<!-- 	</core-animated-pages> -->
-  	
-  </core-drawer-panel>
   
+  
+  <core-animated-pages id="adv" transitions="hero-transition" selected="{{page}}">
+  	<section id="first">
+  		<core-drawer-panel responsiveWidth="1920px" id="knockDrawer" vertical layout fullbleed>
+			 <div id="drawer" drawer>
+			  
+			   <core-header-panel mode="waterfall-tall" fit>
+			   	
+			     <core-toolbar >
+			     	<span class="middle">Knock Knock!</span>
+			     </core-toolbar>
+			     <core-item icon="settings">Settings</core-item>
+			     <core-item icon="more-vert">About</core-item>
+			     <div id="user" >
+				     <paper-fab icon="accessibility" class="mini" id="user"></paper-fab>
+				     <h4>Who’s there?</h4>
+				     <paper-input label="bluedoor" ></paper-input>
+				     <p>Unit 107<br/>St George St.</p>
+				     <core-item icon="add">New hood</core-item>
+			     </div>
+			   </core-header-panel>
+			 </div>
+			  	
+		<section main id="main">
+		  <div id="systray">
+	 		<core-icon icon="device:signal-wifi-2-bar"></core-icon>
+	 		<core-icon icon="device:network-cell"></core-icon>
+	 		<core-icon icon="device:bluetooth"></core-icon>
+	 		12:30
+		 </div>
+		  <core-header-panel>
+		 
+		  <core-toolbar>
+		 	 <paper-icon-button icon="menu" on-tap="{{onMenuClick}}" role="button" tabindex="0"></paper-icon-button>
+		 	 Nearby
+		  
+		  	 <paper-fab icon="add" class="bottom"></paper-fab>
+		  </core-toolbar>
+		  
+		   	  
+		  <div id="nearbyList" content hero-p>
+		  	<paper-item on-tap="{{knock}}" label="The Smiths" hero hero-id="hero-Smith" id="knockSmiths"></paper-item> 
+		  	<paper-item id="knockJon" on-tap="{{knock2}}" hero hero-id="hero-Jon" >Jon with the pug</paper-item> 
+		  	<paper-item id="knockKumar" style="background: #ef6c00;" on-tap="{{knock3}}" hero hero-id="hero-Kumar" >Mr &amp; Mrs Kumar</paper-item> 
+		  	<paper-item id="knock29" on-tap="{{knock4}}" hero hero-id="hero-29" >Guy @ 29b</paper-item>
+		  	<paper-item id="5" style="background: #ff9e80; color: #000;" >Rishi K</paper-item>
+		  <paper-item id="6" style="background: #ab47bc;" >Yuin</paper-item> 
+		  	<paper-item id="7" style="background: #c6ff00; color: #000;" >Robert</paper-item> 
+		  	<paper-item id="8" style="background: #ffff8d; color: #000;" >{username}</paper-item> 
+		  	<paper-item id="9" style="background: #ff3d00;" >{username}</paper-item>
+		  	<paper-item id="10" style="background: #a1887f; color: #000;">{username}</paper-item>		
+		  
+		  
+		  </div>
+		</core-header-panel>  
+		</section> <!-- main vs drawer -->
+		
+  		</core-drawer-panel> 
+	</section>
+	
+	
+	
+  	<section class="knock" on-tap="{{close}}">
+  		<div id="knockSmiths" hero hero-id="hero-Smith" >
+  		<h1>Knock Knock!</h1>
+  		Sending…
+  		Sent to 
+  		
+  		<br />The Smiths
+  		</div>
+  	</section>
+  	<section class="knock" on-tap="{{close}}">
+  		<div id="knockJon" hero hero-id="hero-Jon" >
+  		<h1>Knock Knock!</h1>
+  		Sending…
+  		Sent to
+  		
+  		<br />Jon with the pug
+  		</div>
+  	</section>
+  	<section class="knock" on-tap="{{close}}">
+  		<div id="knockKumar" hero hero-id="hero-Kumar" >
+  		<h1>Knock Knock!</h1>
+  		Sending…
+  		Sent to 
+  		
+  		<br />Mr &amp; Mrs Kumar
+  		</div>
+  	</section>
+  	<section class="knock" on-tap="{{close}}">
+  		<div id="knock29" hero hero-id="hero-29" >
+  		<h1>Knock Knock!</h1>
+  		Sending…
+  		Sent to 
+  		
+  		<br />Guy @ 29b
+  		</div>
+  	</section>
+  </core-animated-pages>
+ 	
   	<!-- global actions -->
   </template>
 	<script>
-	  Polymer('dom-proto', {
+	Polymer('dom-proto', {
+	  	 	  	  
 	  onMenuClick: function() {
 		this.$.knockDrawer.togglePanel();
 	  },	
 	  
-	  knock : function() {
-	  	console.log('knock knock sent');
-	//  	this.$.neighbour.str.replace("The Smiths", "Knock knock! sent");
-	//	this.$('#neighbour').str.replace("The Smiths", "Knock knock! sent");
-	 
-	  }
+	  page : 0,
 	  
-				
-	  });
+	  knock : function() {
+//	    var p = this.$.adv.selected;
+//	  	console.log('knock knock ' + p);
+	 	this.$.adv.selected += 1;	
+	  },
+	  
+	  knock2 : function() {
+	  	this.$.adv.selected = 2;	
+	  },
+	  knock3 : function() {
+	  	this.$.adv.selected = 3;	
+	  },
+	  knock4 : function() {
+	  	this.$.adv.selected = 4;	
+	  },
+	  
+	  close : function() {
+	  	this.$.adv.selected = 0;
+	  }
+	 			
+	});
   	</script>
   
 </polymer-element>
